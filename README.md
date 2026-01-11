@@ -110,7 +110,7 @@ Proje **Python 3.x** ile geliştirilmiş olup aşağıdaki kütüphaneleri kulla
 
 1.  Bu depoyu klonlayın:
     ```bash
-    git clone [https://github.com/kullaniciadi/repo-adi.git](https://github.com/kullaniciadi/repo-adi.git)
+    git clone https://github.com/OzanBaran5/Veri-Analiti-i.git
     ```
 
 2.  Gerekli kütüphaneleri yükleyin:
