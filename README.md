@@ -2,7 +2,7 @@
 
 Bu depo, İstatistiksel Veri Analizi yöntemlerinin (Regresyon, Korelasyon, Hipotez Testleri) teorik temellerini ve Python ile gerçek hayat senaryoları üzerindeki pratik uygulamalarını içermektedir.
 
-**R. [cite_start]Tanju Sirmen**'in ders notlarından referans alınarak hazırlanan bu projeler, teorik bilginin kod ile nasıl hayata geçirildiğini gösterir[cite: 3, 216, 466, 700].
+**R. Tanju Sirmen**'in ders notlarından referans alınarak hazırlanan bu projeler, teorik bilginin kod ile nasıl hayata geçirildiğini gösterir.
 
 ---
 
@@ -24,7 +24,7 @@ Bu çalışmanın temel amacı, ham veriyi anlamlı içgörülere dönüştürü
 
 **Analizlerde şu sorulara yanıt aranmıştır:**
 * *Ekonomik rahatlık suç oranlarını nasıl etkiler?*
-* *Eğitim seviyesi ile gelir arasında istatistiksel olarak anlamlı bir fark var mı?*
+* *Maaşın ne kadarı kiraya gidiyor ve bu oran gelir arttıkça değişiyor mu?*
 * *Nüfus artışı ve emisyon arasındaki ilişki nedir?*
 
 ---
@@ -35,16 +35,21 @@ Kodların temel aldığı istatistiksel kavramlar aşağıdaki kaynaklara dayanm
 
 | Konu | Açıklama | Kaynak Dosya |
 |------|----------|--------------|
-| **Regresyon** | [cite_start]Bağımlı ve bağımsız değişkenler arasındaki ilişkinin modellenmesi ($y=mx+b$)[cite: 218, 230]. | `Introduction to Regression.pdf` |
-| **Korelasyon** | [cite_start]Değişkenler arasındaki ilişkinin yönü ve gücünün (Pearson r) ölçülmesi[cite: 468]. | `Correlation Analysis.pdf` |
-| **Hipotez Testi** | [cite_start]Örneklem verisine dayanarak popülasyon hakkında karar verme ($H_0$ reddi)[cite: 701]. | `Hypothesis Testing.pdf` |
-| **Rastgelelik** | [cite_start]Stokastik süreçler ve deterministik olmayan sistemlerin analizi[cite: 76, 142]. | `Randomness.pdf` |
+| **Regresyon** | Bağımlı ve bağımsız değişkenler arasındaki ilişkinin modellenmesi ($y=mx+b$). | `Introduction to Regression.pdf` |
+| **Korelasyon** | Değişkenler arasındaki ilişkinin yönü ve gücünün (Pearson r) ölçülmesi. | `Correlation Analysis.pdf` |
+| **Hipotez Testi** | Örneklem verisine dayanarak popülasyon hakkında karar verme ($H_0$ reddi). | `Hypothesis Testing.pdf` |
+| **Rastgelelik** | Stokastik süreçler ve deterministik olmayan sistemlerin analizi. | `Randomness.pdf` |
 
 ---
 
 ## 🛠 Analiz Scriptleri
 
 ### 1. Sosyo-Ekonomik Analizler
+
+#### 🏠 `BarınmaYükü.py`
+Şehirlerdeki "Barınma Yükü Endeksi"ni (Kira/Maaş Oranı) hesaplar ve maaş ile kira arasındaki ilişkiyi inceler.
+* **Kullanılan Yöntem:** Lollipop Grafiği ile Görselleştirme, Hipotez Testi (Yüksek maaşlı şehirlerde yük farklı mı?), Regresyon Analizi.
+* **Görsel:** Kritik eşikleri (%30 ve %50) gösteren özel grafikler içerir.
 
 #### 🏙️ `4 Bölgeli Karar Matrisi.py`
 Şehirleri **Tasarruf Potansiyeli** ve **Suç Oranına** göre 4 stratejik bölgeye ayırır.
@@ -100,9 +105,9 @@ Proje **Python 3.x** ile geliştirilmiş olup aşağıdaki kütüphaneleri kulla
 
 * **`pandas`**: Veri manipülasyonu ve temizleme.
 * **`numpy`**: Sayısal hesaplamalar.
-* **`matplotlib` & `seaborn`**: Veri görselleştirme (Regresyon doğruları, Scatter plotlar).
+* **`matplotlib` & `seaborn`**: Veri görselleştirme (Regresyon doğruları, Scatter plotlar, Lollipop grafikleri).
 * **`scipy`**: İstatistiksel testler (T-Test, Shapiro-Wilk, Pearson r).
-* [cite_start]**`scikit-learn`**: Makine öğrenimi modelleri (LinearRegression), MSE ve R² hesaplamaları[cite: 355, 363].
+* **`scikit-learn`**: Makine öğrenimi modelleri (LinearRegression), MSE ve R² hesaplamaları.
 
 ---
 
@@ -120,7 +125,7 @@ Proje **Python 3.x** ile geliştirilmiş olup aşağıdaki kütüphaneleri kulla
 
 3.  Analiz scriptlerini çalıştırın (Örnek):
     ```bash
-    python "4 Bölgeli Karar Matrisi.py"
+    python "BarınmaYükü.py"
     ```
     *(Not: Scriptlerin çalışması için `message.txt` veya ilgili `.csv` veri dosyalarının aynı dizinde olduğundan emin olun.)*
 
